@@ -1,18 +1,17 @@
-package dev.aleksei.ims.item;
+package dev.aleksei.ims.model;
+
+import java.text.DecimalFormat;
 
 public class Item {
 
+//  Is it a good idea to make all fields protected?
+    protected String type;
+    protected double price;
     private String name;
-    private double price;
     private int quantity;
-    private String type;
 
-//    Item(String name, double price, int quantity, String type) {
-//        this.name = name;
-//        this.price = price;
-//        this.quantity = quantity;
-//        this.type = type;
-//    }
+//  Is there a better way to round double for the price?
+    protected static DecimalFormat df = new DecimalFormat("##.00");
 
     public String getName() {
         return name;
@@ -20,6 +19,10 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public double getPrice() {
@@ -36,13 +39,5 @@ public class Item {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 }
